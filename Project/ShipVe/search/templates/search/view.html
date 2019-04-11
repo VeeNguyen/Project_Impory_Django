@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row mb-3">
+        {% if query %}
+        <!-- Results for -->
+        <div class="col-12">
+            Result for {{ query }}
+            <hr/>
+        </div>
+        {% else %}
+
+        <div class="col-12 col-md-8 mx-auto py-5">
+            {% include 'search/snippets/search-form.html' %}
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
+        {% endif %}
+
+    </div>
+
+
+
+    {% for obj in object_list %}
+    <div class="row">
+        <div class="col">
+            {% include 'products/snippets/card.html' with instance=obj %}
+
+            {% if forloop.counter|divisibleby:2 %}
+            </div></div>
+
+            <div class="row">
+                <div class="col-12"><hr/></div>
+
+            {% elif forloop.counter|divisibleby:2 %}
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <hr/>
+                </div>
+            {% else %}
+            </div>
+            {% endif %}
+
+    {% endfor %}
+
+
+{% endblock %}
