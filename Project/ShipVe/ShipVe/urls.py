@@ -15,18 +15,22 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib import admin
+
 from django.urls import re_path, include
+from django.contrib import admin
 from django.views.generic import TemplateView
 
 
-from .views import home_page, about_page, contact_page, login_page, register_page
+from accounts.views import login_page, register_page
+from .views import home_page, about_page, contact_page
 
 urlpatterns = [
     re_path(r'^$', home_page, name='home'),
     re_path(r'^about$', about_page, name='about'),
     re_path(r'^contact$', contact_page, name='contact'),
     re_path(r'^login$', login_page, name='login'),
+    re_path(r'^login/', login_page, name='login'),
+
     re_path(r'^cart/', include(("carts.urls", "cart"), namespace='cart')),
     re_path(r'^register$', register_page, name='register'),
     re_path(r'^bootstrap$', TemplateView.as_view(template_name='bootstrap/example.html')),

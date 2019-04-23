@@ -1,0 +1,22 @@
+Mental notes for Checkout process:
+
+    1. Go to Cart -> Checkout View
+        Login/Register or Enter an email as a guest
+            Shipping address
+            Billing info:
+                Billing address
+                Payment (credit card,...)
+
+    2. Billing App/Component
+        Billing Profile
+            User or Guest Email
+            Generate payment processor token (stripe or braintee)
+
+    3. Orders / Invoices Component
+        Connecting the Billing Profile
+        Shipping / Billing Address
+        Cart
+        Status (pending? shipped? cancelled?)
+
+
+sau khi xong, dung database cua ai. query?
