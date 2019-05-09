@@ -18,6 +18,7 @@ from django.conf.urls.static import static
 
 from django.urls import re_path, include
 from django.contrib import admin
+from django.contrib.auth.views import LogoutView
 from django.views.generic import TemplateView
 
 
@@ -28,8 +29,8 @@ urlpatterns = [
     re_path(r'^$', home_page, name='home'),
     re_path(r'^about$', about_page, name='about'),
     re_path(r'^contact$', contact_page, name='contact'),
-    re_path(r'^login$', login_page, name='login'),
-    re_path(r'^login/', login_page, name='login'),
+    re_path(r'^login/$', login_page, name='login'),
+    re_path(r'^logout$', LogoutView.as_view(), name='logout'),
 
     re_path(r'^cart/', include(("carts.urls", "cart"), namespace='cart')),
     re_path(r'^register$', register_page, name='register'),

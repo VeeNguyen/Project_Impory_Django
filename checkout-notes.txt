@@ -18,5 +18,5 @@ Mental notes for Checkout process:
         Cart
         Status (pending? shipped? cancelled?)
 
-
+foreignkey -> direct relationship association
 sau khi xong, dung database cua ai. query?
