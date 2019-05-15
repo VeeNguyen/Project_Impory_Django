@@ -22,7 +22,7 @@ from django.contrib.auth.views import LogoutView
 from django.views.generic import TemplateView
 
 
-from accounts.views import login_page, register_page
+from accounts.views import login_page, register_page, guest_register_view
 from .views import home_page, about_page, contact_page
 
 urlpatterns = [
@@ -30,6 +30,7 @@ urlpatterns = [
     re_path(r'^about$', about_page, name='about'),
     re_path(r'^contact$', contact_page, name='contact'),
     re_path(r'^login/$', login_page, name='login'),
+    re_path(r'^register/guest/$', guest_register_view, name='guest_register'),
     re_path(r'^logout$', LogoutView.as_view(), name='logout'),
 
     re_path(r'^cart/', include(("carts.urls", "cart"), namespace='cart')),

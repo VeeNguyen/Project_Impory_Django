@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 
+from accounts.forms import LoginForm, GuestForm
+from accounts.models import GuestEmail
 from billing.models import BillingProfile
-from accounts.forms import LoginForm
 from orders.models import Order
 from products.models import Product
 from .models import Cart
@@ -34,19 +35,21 @@ def checkout_home(request):
     order_obj = None
     if cart_created or cart_obj.products.count() == 0:
         return redirect("cart:home")
-    else:
-        order_obj, new_order_obj = Order.objects.get_or_create(cart=cart_obj)
-    user = request.user
-    billing_profile = None
+
     login_form = LoginForm()
+    guest_form = GuestForm()
 
-    if user.is_authenticated:
-        billing_profile, billing_profile_created = BillingProfile.objects.get_or_create(user=user, email=user.email)
+    billing_profile, billing_profile_created = BillingProfile.objects.new_or_get(request)
+    # Creating order object
+    if billing_profile is not None:
+        order_obj, order_obj_created = Order.objects.new_or_get(billing_profile, cart_obj)
 
+    # New stuff that is shown on website should be added in context
     context = {
         "objects": order_obj,
         "billing_profile": billing_profile,
         "login_form": login_form,
+        "guest_form": guest_form,
     }
     return render(request, "carts/checkout.html", context)
 
