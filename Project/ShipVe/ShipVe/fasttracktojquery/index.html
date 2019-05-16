@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+      <style>
+          h1 {
+            color: green;
+          }
+      </style>
+
+
+  </head>
+  <body>
+    <h1 class="header">Hello, world!</h1>
+    <h1 class="header">Hello, world!</h1>
+    <h1 id="header-3" class="header">Hello, world!</h1>
+    <h1 class="header">Hello, world!</h1>
+    <h1 class="header">Hello, world!</h1>
+    <p class="description">kkjsakjhsalkdjhfksjhdfkhsafhksldhfkjshdf
+        kjhlskajhdflkjshadflkhsldkjfhlksjhdflkhsdlkfhklsdhflkjshdlk
+        fhskljadhflkhsadkjfhljfhslahfjdsk
+    skjdhfklshdfk;hsahflkhlskdahflkjsahdlkfhlksadhflkjsdhfkljhsdlk
+        jfhskljahflkhsdjfhlksahdflkjhsdlkfh'sadkjfhlksjahdflkhasd
+        lkfjhlkjsah
+    safjdhaslkfjdhlkfhasdklfhkjsahdfkjhsalkdjhfljksahdflkhsalkh
+        dflkjashdfkljhsadkljfhsd
+    skjadhflkjshdflkjsahdlfkjhfds</p>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // $(selector)
+
+            var $description = $(".description")
+            // $description.css("height", "300px").css("width", "250px")
+
+            console.log($description.length)
+            console.log($description.css("height"))
+            console.log($description.height())
+
+
+            // if currentElementHeight > buildInHeight
+            // add $description.css("overflow". "hideen")
+
+
+
+
+            setTimeout(function(){
+                // $('body').css("background-color", "red")
+
+                $('h1').css("color", "purple")
+                $('h1:nth-child(2)').text("hello again")
+                $('#header-3').text("hello again h3")
+                $('.header').css("background-color", "green").css("padding", "30px")
+
+            }, 1000)
+        })
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+</html>

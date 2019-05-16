@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # our apps
     'accounts',
+    'addresses',
     'billing',
     'carts',
     'orders',
