@@ -1,70 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-      <style>
-          h1 {
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <style>
+            h1 {
             color: green;
-          }
-      </style>
+            }
+
+            .description {
+                width: 250px;
+                height: 300px;
+                padding: 30px 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col mx-auto">
+                    <h3>Form</h3>
+                    <form class="new-content-form" method="POST" action="/some/url/link">
+                        <textarea name="content" class="form-control"></textarea>
+                        <input type="submit" value="Save">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="formDataSubmitted">
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <h1 class="header">Hello, world!</h1>
+        <h1 class="header">Hello, world!</h1>
+        <h1 id="header-3" class="header">Header-3</h1>
+        <h1 class="header">Hello, world!</h1>
+        <h1 class="header">Hello, world!</h1>
+
+        <p class="description"><a href="/abc/">Some Link</a></p>
+        <p class="description">This is another paragraph</p>
+        <p class="description">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+        </p>
+
+        <!-- jQuery first, then Tether, then Bootstrap JS. -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!--    <script type="text/javascript">-->
+
+<!--        $(document).ready(function(){-->
+<!--            var num = 123-->
+<!--            var str = "something"-->
+<!--            var arr = [num, 123, 124, "another"]-->
+<!--            var someBool = true-->
+<!--            $.each(arr, function(index, obj){-->
+<!--                console.log("This is loop " + index, obj)-->
+<!--                if (obj % 2 == 0 && someBool){-->
+<!--                    console.log(obj, "is even")-->
+<!--                } else if (obj % 3 == 0 && someBool){-->
+<!--                    console.log(obj, "by 3")-->
+<!--                } else {-->
+<!--                    console.log(obj, "false and is not even")-->
+<!--                }-->
+<!--            })-->
+<!--        })-->
+
+<!--    </script>-->
 
 
-  </head>
-  <body>
-    <h1 class="header">Hello, world!</h1>
-    <h1 class="header">Hello, world!</h1>
-    <h1 id="header-3" class="header">Hello, world!</h1>
-    <h1 class="header">Hello, world!</h1>
-    <h1 class="header">Hello, world!</h1>
-    <p class="description">kkjsakjhsalkdjhfksjhdfkhsafhksldhfkjshdf
-        kjhlskajhdflkjshadflkhsldkjfhlksjhdflkhsdlkfhklsdhflkjshdlk
-        fhskljadhflkhsadkjfhljfhslahfjdsk
-    skjdhfklshdfk;hsahflkhlskdahflkjsahdlkfhlksadhflkjsdhfkljhsdlk
-        jfhskljahflkhsdjfhlksahdflkjhsdlkfh'sadkjfhlksjahdflkhasd
-        lkfjhlkjsah
-    safjdhaslkfjdhlkfhasdklfhkjsahdfkjhsalkdjhfljksahdflkhsalkh
-        dflkjashdfkljhsadkljfhsd
-    skjadhflkjshdflkjsahdlfkjhfds</p>
 
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!--        <script type="text/javascript">-->
+<!--            $(document).ready(function(){-->
+<!--                var $descriptionItems = $(".description")-->
+<!--                &lt;!&ndash;console.log("$descriptionItems " + $descriptionItems.length)&ndash;&gt;-->
 
-    <script type="text/javascript">
-        $(document).ready(function(){
-            // $(selector)
+<!--                $.each($descriptionItems, function(index, obj){-->
+<!--                    var item = $(this)-->
+<!--                    var actualHeight = item[0].scrollHeight-->
+<!--                    var shouldBeHeight = item.height()-->
 
-            var $description = $(".description")
-            // $description.css("height", "300px").css("width", "250px")
+<!--                    &lt;!&ndash;console.log("actualHeight: " + actualHeight, "shouldBeHeight: " + shouldBeHeight)&ndash;&gt;-->
 
-            console.log($description.length)
-            console.log($description.css("height"))
-            console.log($description.height())
+<!--                    if (actualHeight > shouldBeHeight + 50){-->
+<!--                        item.css("overflow-y", "scroll")-->
+<!--                    }-->
+<!--                 })-->
 
 
-            // if currentElementHeight > buildInHeight
-            // add $description.css("overflow". "hideen")
+<!--                var header3 = $("#header-3")-->
+<!--                header3.click(function(event){-->
+<!--                    var $this = $(this)-->
+<!--                    console.log($this)-->
+<!--                    console.log(event)-->
+<!--                    window.location.href = 'https://www.google.com'-->
+<!--                })-->
+
+<!--                var descriptionLinks = $(".description a")-->
+<!--                descriptionLinks.click(function(event){-->
+<!--                    console.log(event)-->
+<!--                    event.preventDefault()-->
+
+<!--                    var $this = $(this)-->
+<!--                    var href = $this.attr("href")-->
+<!--                    console.log(href)-->
+<!--                    alert(href)-->
+<!--                    window.location.href = 'https://www.google.com'-->
+<!--                })-->
+<!--            })-->
+
+<!--        </script>-->
+
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var contentForm = $(".new-content-form")
+                contentForm.submit(function(event){
+                    event.preventDefault()
+
+                    var $this = $(this)
+
+                    //console.log("contentForm.serialize: " + contentForm.serialize())
+
+                    var textAreaContent = $this.find('textarea')
+                    //console.log("attrName: " + textAreaContent.attr("name"))
+                    //console.log(textAreaContent.val())
+
+                    var formMethod = $this.attr("method")
+                    var formAction = $this.attr("action")
+
+                    var data = {
+                        "content": textAreaContent.val(),
+                        "method": formMethod,
+                        "action": formAction,
+                    }
+
+                    $(".formDataSubmitted").text(textAreaContent.val() + " method is " + formMethod)
+
+                    textAreaContent.val("")
 
 
 
 
-            setTimeout(function(){
-                // $('body').css("background-color", "red")
 
-                $('h1').css("color", "purple")
-                $('h1:nth-child(2)').text("hello again")
-                $('#header-3').text("hello again h3")
-                $('.header').css("background-color", "green").css("padding", "30px")
+                })
 
-            }, 1000)
-        })
+            })
 
-    </script>
-
+        </script>
 
 
 

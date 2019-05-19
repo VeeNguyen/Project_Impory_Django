@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 
 from accounts.forms import LoginForm, GuestForm
@@ -12,6 +13,23 @@ from products.models import Product
 from .models import Cart
 
 
+def cart_detail_api_view(request):
+    cart_obj, new_obj = Cart.objects.new_or_get(request)
+
+    # Query set [<object>, <object>, <object>].
+    # So we serialize it by doing this. JsonResponse understands.
+    products = [{
+                "id": items.id,
+                "url": items.get_absolute_url(),
+                "name": items.name,
+                "price": items.price,
+                }
+                for items in cart_obj.products.all()]
+
+    cart_data = {"products": products, "subtotal": cart_obj.subtotal, "total": cart_obj.total}
+    return JsonResponse(cart_data)
+
+
 def cart_home(request):  # Create an object
     cart_obj, new_obj = Cart.objects.new_or_get(request)
     return render(request, "carts/home.html", {"cart": cart_obj})
@@ -19,18 +37,36 @@ def cart_home(request):  # Create an object
 
 def cart_update(request):  # Update that object
     product_id = request.POST.get("product_id")
+
     if product_id is not None:
         try:
             product_obj = Product.objects.get(id=product_id)
         except Product.DoesNotExist:
             print("Show message to user, product is gone?")
             return redirect("cart:home")
+
         cart_obj, new_obj = Cart.objects.new_or_get(request)
+
+        # Adding and Removing products in cart
         if product_obj in cart_obj.products.all():
-            cart_obj.products.remove(product_obj)  # or cart_obj.products.add(product_id)
+            cart_obj.products.remove(product_obj)
+            added = False
         else:
             cart_obj.products.add(product_obj)
-        request.session["cart_items"] = cart_obj.products.count()
+            added = True
+        request.session["cart_items"] = cart_obj.products.count()  # Counting the number of items
+
+        # Handling Ajax response on the browser
+        # Asynchronous JavaScript And XML / JSON - Javascript Object Notation
+        if request.is_ajax():
+            print("Ajax request")
+            json_data = {
+                "added": added,
+                "removed": not added,
+                "cartItemCount": cart_obj.products.count(),
+            }
+            # Return Json with a message: return JsonResponse({"message": "Error 400"}, status=400). Default of status is 200/201. Django Rest Framework is perfect for handling Error stuff
+            return JsonResponse(json_data, status=200)
     return redirect("cart:home")
 
 
